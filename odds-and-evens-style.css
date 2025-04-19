@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+/* * {
+    border: 1px solid black;
+} */
+body {
+    background-color: rgb(244, 244, 244);
+    color: rgb(25, 25, 25); 
+    text-align: center;
+    align-items: center;
+    font-family: Dosis, 'Libre Franklin', sans-serif;
+}
+#game {
+    width: 100dvw;
+    height: 100dvh;
+}
+
+#game-container{
+    height: 40dvh;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 3rem;
+}
+
+.two-times-golden-ratio, .three-times-golden-ratio {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.two-times-golden-ratio {
+    width: calc(100vw/1.61/1.61);
+
+}
+.three-times-golden-ratio {
+    width: calc(100vw/1.61/1.61/1.61);
+}
+button {
+    background-color: #D9FF45;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+} 
+button:hover {
+    background-color: #FFDD45;
+}

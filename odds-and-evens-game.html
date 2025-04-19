@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="odds-and-evens-style.css">
+    <title>Odds And Evens Game</title>
+  </head>
+  <body>
+    <main id="full-game-screen">
+      <h1>Odds and Evens</h1>
+      <p><strong>How to play:</strong> Bet whether the result will be odd or even. Then pick a number </p>
+      <div id="button-container"></div>
+        <button id="odd">Odd</button>
+        <button id="even">Even</button>
+      </div>
+      <div id="game-container">
+        <div class="two-times-golden-ratio">
+            <p><button id="player-picks-odd">1</button>
+           or 
+            <button id="player-picks-even">10</button>
+        </div></p>
+        <div class="two-times-golden-ratio">
+            <p>+ 
+                <button id="computer-choice" role="p">?</button>
+            =</p>
+        </div>
+        <div class="three-times-golden-ratio">
+            <button id="result" role="p">?</button>
+        </div>
+      </div>
+      <div class="number-system-container">
+        <button id="switch-to-binary">binary</button>
+        <button id="switch-to-decimal">decimal</button>
+      </div>
+    </main>
+    <script src="./odds-and-evens-app.js"></script>
+  </body>
+</html>
