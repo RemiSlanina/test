@@ -1,6 +1,9 @@
 // TO-DO : display who wins 
 // check if user made a bet 
-// update design ... and so on
+// update design ... and so on 
+// he doesnt check if he IS already binar/decimal --> number bigger or NaN error 
+
+
 const betOddEven = [document.getElementById('odd'), document.getElementById('even')]; 
 const oddEvenText = ['even', 'odd']; 
 const oddEven = [1, 2]; 
@@ -14,27 +17,35 @@ let userBet; let userPick; let computerPick;
 
 handleSwitchBaseEvent = (e) => {
     if (e.target.id == 'switch-to-binary') {
-        binaryBase = true; 
-        // convert all the values if present 
-        console.log(resultDisplay.innerText); 
-        
-        // see if the value of result needs to be displayed binary: 
-        if (!isNaN(parseInt(resultDisplay.innerText))) resultDisplay.innerHTML = parseInt(resultDisplay.innerText).toString(2);
-        // see if the value of the computer's choice needs to be displayed binary: 
-        if (!isNaN(parseInt(computerChoiceDisplay.innerText))) computerChoiceDisplay.innerHTML = parseInt(computerChoiceDisplay.innerText).toString(2);
+        /**check if the number is currently decimal, then change it to binary */
+        if (!binaryBase) {
+            binaryBase = true; 
+            // convert all the values if present 
+            console.log(resultDisplay.innerText); 
+            
+            // see if the value of result needs to be displayed binary: 
+            if (!isNaN(parseInt(resultDisplay.innerText))) resultDisplay.innerHTML = parseInt(resultDisplay.innerText).toString(2);
+            // see if the value of the computer's choice needs to be displayed binary: 
+            if (!isNaN(parseInt(computerChoiceDisplay.innerText))) computerChoiceDisplay.innerHTML = parseInt(computerChoiceDisplay.innerText).toString(2);
+           
+            // convert the second users choice button too (in any case)
+            pickOddEven[1].innerHTML = oddEven[1].toString(2); 
+        }
        
-        // convert the second users choice button too (in any case)
-        pickOddEven[1].innerHTML = oddEven[1].toString(2); 
     } 
     else {
-        binaryBase = false; 
-        // see if the value of result needs to be displayed decimal:
-        // if the value is a Number, adapt it 
-        if (!isNaN(parseInt(resultDisplay.innerText))) resultDisplay.innerHTML = parseInt(resultDisplay.innerText, 2).toString(10);
-        // see if the value of the computer's choice needs to be displayed binary: 
-        if (!isNaN(parseInt(computerChoiceDisplay.innerText))) computerChoiceDisplay.innerHTML = parseInt(computerChoiceDisplay.innerText, 2).toString(10);
-        // convert the second user choice button to decimal too 
-        pickOddEven[1].innerHTML = oddEven[1];
+        /**check if the number is currently binary, then change it to decimal */
+        if (binaryBase) {
+            binaryBase = false; 
+            // see if the value of result needs to be displayed decimal:
+            // if the value is a Number, adapt it 
+            if (!isNaN(parseInt(resultDisplay.innerText))) resultDisplay.innerHTML = parseInt(resultDisplay.innerText, 2).toString(10);
+            // see if the value of the computer's choice needs to be displayed binary: 
+            if (!isNaN(parseInt(computerChoiceDisplay.innerText))) computerChoiceDisplay.innerHTML = parseInt(computerChoiceDisplay.innerText, 2).toString(10);
+            // convert the second user choice button to decimal too 
+            pickOddEven[1].innerHTML = oddEven[1];
+        }
+        
     }
     console.log( `binaryBase is set to ${binaryBase}`); 
 }
