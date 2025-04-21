@@ -3,6 +3,8 @@
 // finish implementing talkback 
 // ... 
 // implement onclick events for the result and computerchoice button 
+
+// change the inactive and active bet and color base buttons too 
 // change the code so you would be able to pick first or bet first, regardless of order
 
 const talkBackDisplay = document.getElementById('talk-back-display');
@@ -62,10 +64,15 @@ for (i = 0; i < switchBase.length; i++) {
 
 /* what's the user's bet? */
 handleBetEvent = (e) => {
-    userBet = e.target.id; 
-    pickOddEven[0].classList.remove('inactive-button');
-    pickOddEven[1].classList.remove('inactive-button');
-    console.log( `You've bet on ${userBet}`); 
+    if (userBet) {
+        talkBackDisplay.innerText = `You've already bet on ${userBet}. Pick a number.`;
+    }
+    else {
+        userBet = e.target.id; 
+        pickOddEven[0].classList.remove('inactive-button');
+        pickOddEven[1].classList.remove('inactive-button');
+        talkBackDisplay.innerText = `You've bet on ${userBet}. Now pick a number.`;
+        console.log( `You've bet on ${userBet}`); }
 }
 /* the "Bet-Buttons" both need EventListeners: */
 for (let i = 0; i < betOddEven.length; i++) {
@@ -85,12 +92,23 @@ handlePickEvent = (e) => {
         userPick = 2;
         /** make the other option 'invalid' */
         pickOddEven[0].classList.add('inactive-button');
-      }   
-      console.log(`You picked ${userPick}`); 
+      }
+
+      if (binaryBase) {
+        userPickString = "" + userPick.toString(2); 
+        talkBackDisplay.innerText = `You picked ${userPickString}. Computer is choosing...`;  
+        console.log(`You picked ${userPickString}`); 
+      } 
+      else {
+        talkBackDisplay.innerText = `You picked ${userPick}. Computer is choosing...`;  
+        console.log(`You picked ${userPick}`); 
+      }
+      //talkBackDisplay.innerText = `You picked ${userPick}. Computer is choosing...`;  
+      //console.log(`You picked ${userPick}`); 
       /* Every good thing is worth waiting for.
        First version with 2 call backs: 
        1st call back */ 
-      setTimeout(generateComputerPick, 750); 
+      setTimeout(generateComputerPick, 950); 
     }
     else talkBackDisplay.innerText= `Please make a bet first!`; 
 }
@@ -107,11 +125,7 @@ const generateResult = () => {
     if (binaryBase) resultDisplay.innerText = result.toString(2);
     else resultDisplay.innerText = result;
     console.log(`Resulting value= ${result} and the result is ${oddEvenText[result%oddEvenText.length]}`); 
-    // still missing: display who wins 
-    // ... 
-    /* if (userBet == 'even') {
-        if
-    } */
+
     switch (userBet+result%oddEvenText.length) {
       case 'odd0': 
       talkBackDisplay.innerText = "Your bet was odd. Result is even. You lost this round."
