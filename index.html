@@ -8,36 +8,39 @@
   </head>
   <body>
     <main id="full-game-screen">
-      <h1>Odds and Evens</h1>
+      <h1 title="Do you want to play a game of odds and evens?">Odds and Evens</h1>
       <p><strong>How to play:</strong> Bet whether the result will be odd or even. Then pick a number </p>
       <div id="button-container"></div>
-        <button id="odd">Odd</button>
-        <button id="even">Even</button>
+        <button id="odd" title="Click to bet the result will be an odd number">Odd</button>
+        <button id="even" title="Click to bet the result will be an even number">Even</button>
       </div>
       <div id="talk-back-display-container"><h2 id="talk-back-display"></h2></div>
       <div id="game-container">
         <!-- <div class="two-times-golden-ratio"> -->
-            <button id="player-picks-odd" class="play-button">1</button>
+            <button id="player-picks-odd" class="play-button" 
+              title="Click here to pick an odd number.">1</button>
 
               <button class="invisible-button play-button" role="p">or</button>
            
-            <button id="player-picks-even" class="play-button">10</button>
+            <button id="player-picks-even" class="play-button" 
+              title="Click here to pick an even number.">10</button>
         <!-- </div> -->
         <!-- <div class="two-times-golden-ratio">
  -->
           <button class="invisible-button play-button" role="p">+</button>
             
-                <button id="computer-choice" class="play-button" role="p">?</button>
+                <button id="computer-choice" class="play-button" role="p" 
+                  title="Make a bet, then pick a number and wait for the computer to choose one, too.">?</button>
             
             <button class="invisible-button play-button" role="p">=</button>
         <!-- </div> -->
         <!-- <div class="three-times-golden-ratio"> -->
-            <button id="result" class="play-button" role="p">?</button>
+            <button id="result" class="play-button" role="p" title="Here the result will be displayed.">?</button>
         <!-- </div> -->
       </div>
       <div class="number-system-container">
-        <button id="switch-to-binary">binary</button>
-        <button id="switch-to-decimal">decimal</button>
+        <button id="switch-to-binary" title="Click here to switch to binary notation.">binary</button>
+        <button id="switch-to-decimal" title="Click here to switch to decimal notation.">decimal</button>
       </div>
     </main>
     <script src="./odds-and-evens-app.js"></script>
