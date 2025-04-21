@@ -1,7 +1,8 @@
 // TO-DO : 
 // update design ... and so on 
 // finish implementing talkback 
-// ...
+// ... 
+// implement onclick events for the result and computerchoice button 
 // change the code so you would be able to pick first or bet first, regardless of order
 
 const talkBackDisplay = document.getElementById('talk-back-display');
@@ -62,6 +63,8 @@ for (i = 0; i < switchBase.length; i++) {
 /* what's the user's bet? */
 handleBetEvent = (e) => {
     userBet = e.target.id; 
+    pickOddEven[0].classList.remove('inactive-button');
+    pickOddEven[1].classList.remove('inactive-button');
     console.log( `You've bet on ${userBet}`); 
 }
 /* the "Bet-Buttons" both need EventListeners: */
@@ -73,13 +76,21 @@ for (let i = 0; i < betOddEven.length; i++) {
 handlePickEvent = (e) => {
     if (userBet) {
         let userPickString = e.target.id; 
-      if (userPickString == 'player-picks-odd') userPick = 1; 
-      else userPick = 2;   
+      if (userPickString == 'player-picks-odd') {
+        userPick = 1; 
+        /** make the other option 'invalid' */
+        pickOddEven[1].classList.add('inactive-button');
+      }
+      else {
+        userPick = 2;
+        /** make the other option 'invalid' */
+        pickOddEven[0].classList.add('inactive-button');
+      }   
       console.log(`You picked ${userPick}`); 
       /* Every good thing is worth waiting for.
        First version with 2 call backs: 
        1st call back */ 
-      setTimeout(generateComputerPick, 1000); 
+      setTimeout(generateComputerPick, 750); 
     }
     else talkBackDisplay.innerText= `Please make a bet first!`; 
 }
@@ -131,6 +142,6 @@ const generateComputerPick = () => {
     if (binaryBase) computerChoiceDisplay.innerText = computerPick.toString(2); 
     else computerChoiceDisplay.innerText = computerPick;
     /* 2nd call back */
-    setTimeout(generateResult, 1000); 
+    setTimeout(generateResult, 750); 
 }
 

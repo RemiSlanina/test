@@ -16,19 +16,24 @@
       </div>
       <div id="talk-back-display-container"><h2 id="talk-back-display"></h2></div>
       <div id="game-container">
-        <div class="two-times-golden-ratio">
-            <p><button id="player-picks-odd">1</button>
-           or 
-            <button id="player-picks-even">10</button>
-        </div></p>
-        <div class="two-times-golden-ratio">
-            <p>+ 
-                <button id="computer-choice" role="p">?</button>
-            =</p>
-        </div>
-        <div class="three-times-golden-ratio">
-            <button id="result" role="p">?</button>
-        </div>
+        <!-- <div class="two-times-golden-ratio"> -->
+            <button id="player-picks-odd" class="play-button">1</button>
+
+              <button class="invisible-button play-button" role="p">or</button>
+           
+            <button id="player-picks-even" class="play-button">10</button>
+        <!-- </div> -->
+        <!-- <div class="two-times-golden-ratio">
+ -->
+          <button class="invisible-button play-button" role="p">+</button>
+            
+                <button id="computer-choice" class="play-button" role="p">?</button>
+            
+            <button class="invisible-button play-button" role="p">=</button>
+        <!-- </div> -->
+        <!-- <div class="three-times-golden-ratio"> -->
+            <button id="result" class="play-button" role="p">?</button>
+        <!-- </div> -->
       </div>
       <div class="number-system-container">
         <button id="switch-to-binary">binary</button>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 * {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 body {
     background-color: rgb(250, 250, 250);
@@ -19,7 +19,7 @@ body {
     min-height: 20dvh;
     display: flex;
     justify-content: space-evenly;
-    font-size: 3rem;
+    font-size: 3rem; 
 }
 #talk-back-display-container {
     min-height: 20dvh;
@@ -28,17 +28,19 @@ body {
     /* background-color: #D9FF45; */
 } #talk-back-display {
     background-color: #E7F294;
-    background-color: #e7f29432;
+    background-color: hsla(67, 78%, 76%, 0.2);
     margin: auto;
     padding: 1.4rem;
     min-width: 30dvw;
     border-radius: 1rem; 
-    box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.2); 
 }
-.two-times-golden-ratio, .three-times-golden-ratio {
+/* .two-times-golden-ratio, .three-times-golden-ratio {
     display: flex; 
-    justify-content: center; 
+    justify-content: space-evenly; 
     align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
 }
 .two-times-golden-ratio {
     width: calc(100vw/1.61/1.61);
@@ -46,7 +48,7 @@ body {
 }
 .three-times-golden-ratio {
     width: calc(100vw/1.61/1.61/1.61);
-}
+} */
 button {
     background-color: #D9FF45;
     padding: 1rem 2rem 1rem 2rem;
@@ -55,4 +57,64 @@ button {
 } 
 button:hover {
     background-color: #FFDD45;
+}
+.invisible-button {
+    /* background-color: rgba(116, 116, 116, 0.108); */
+    background-color: transparent;
+    border: none;
+    /* border: 1px solid black;  */
+    /* box-shadow: none; */
+}
+.invisible-button:hover {
+    background-color: transparent;
+}
+.play-button {
+/*     padding: 2rem 3.22rem; */
+    padding: 2dvw 13dvh;
+}
+.inactive-button, .inactive-button:link, .inactive-button:hover {
+    background-color: gray;
+    background-color: hsla(0, 0%, 50%, 0.5);
+}
+.number-system-container {
+    padding: 3rem; 
+} 
+@media screen and (max-width: 992px) {
+    #game-container{
+        /* min-height: 20dvh;
+        display: flex;
+        justify-content: space-evenly; */
+        /* background-color: blue; */
+        flex-wrap: wrap;
+        font-size: 2rem; 
+    }
+    /* button {
+        background-color: #D9FF45;
+        padding: 0.77rem 1.2rem 0.77rem 1.2rem;
+        border-radius: 0.77rem;
+        font-size: 1.2rem;
+    } */
+    .play-button {
+        /*     padding: 2rem 3.22rem; */
+            padding: 5dvw 10dvh;
+        }
+  }
+@media screen and (max-width: 600px) {
+    #game-container{
+        /* min-height: 20dvh;
+        display: flex;
+        justify-content: space-evenly; */
+        /* background-color: red; */
+        font-size: 1rem; 
+    }
+    button {
+        background-color: #D9FF45;
+        padding: 0.77rem 1.2rem 0.77rem 1.2rem;
+        border-radius: 0.77rem;
+        font-size: 1.2rem;
+    }
+    .play-button {
+/*     padding: 2rem 3.22rem; */
+    padding: 5dvw 10dvh;
+}
 }
