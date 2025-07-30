@@ -20,6 +20,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     font-size: 3rem; 
+    flex-wrap: wrap;
 }
 #talk-back-display-container {
     min-height: 20dvh;
@@ -61,20 +62,27 @@ button:hover {
 .invisible-button {
     /* background-color: rgba(116, 116, 116, 0.108); */
     background-color: transparent;
-    border: none;
+    background-color: white;
+    background-color: #fafafa33;
+    background-color: hsla(0, 0%, 98%, 0.2);
+    border: solid hsla(0, 0%, 50%, 0.1);
     /* border: 1px solid black;  */
     /* box-shadow: none; */
 }
 .invisible-button:hover {
     background-color: transparent;
+    background-color: hsla(0, 0%, 98%, 0.2);
 }
 .play-button {
 /*     padding: 2rem 3.22rem; */
     padding: 2dvw 13dvh;
 }
+.not-clickable:hover {
+    background-color: #D9FF45;
+}
 .inactive-button, .inactive-button:link, .inactive-button:hover {
     background-color: gray;
-    background-color: hsla(0, 0%, 50%, 0.5);
+    background-color: hsla(0, 0%, 50%, 0.5); 
 }
 .number-system-container {
     padding: 3rem; 
@@ -85,6 +93,7 @@ button:hover {
         display: flex;
         justify-content: space-evenly; */
         /* background-color: blue; */
+        flex-direction: row;
         flex-wrap: wrap;
         font-size: 2rem; 
     }
@@ -106,6 +115,7 @@ button:hover {
         justify-content: space-evenly; */
         /* background-color: red; */
         font-size: 1rem; 
+        flex-direction: column;
     }
     button {
         background-color: #D9FF45;
