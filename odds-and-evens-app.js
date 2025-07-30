@@ -32,7 +32,7 @@ let computerPick;
 talkBackDisplay.innerText = `Do you bet ${oddEvenText[1]} or ${oddEvenText[0]}?`;
 
 /* Switch Base of Numbers from decimal to binary and back */
-handleSwitchBaseEvent = (e) => {
+const handleSwitchBaseEvent = (e) => {
   if (e.target.id == "switch-to-binary") {
     /**check if the number is currently decimal, then change it to binary */
     if (!binaryBase) {
@@ -80,7 +80,7 @@ for (i = 0; i < switchBase.length; i++) {
 }
 
 /* what's the user's bet? */
-handleBetEvent = (e) => {
+const handleBetEvent = (e) => {
   if (userBet) {
     talkBackDisplay.innerText = `You've already bet on ${userBet}. Pick a number.`;
   } else {
@@ -97,7 +97,7 @@ for (let i = 0; i < betOddEven.length; i++) {
 }
 
 /* what's the user's pick? */
-handlePickEvent = (e) => {
+const handlePickEvent = (e) => {
   if (userBet) {
     let userPickString = e.target.id;
     if (userPickString == "player-picks-odd") {
