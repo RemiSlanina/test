@@ -26,7 +26,6 @@ body {
     min-height: 20dvh;
     display: flex;
     justify-content: center; 
-    /* background-color: #D9FF45; */
 } #talk-back-display {
     background-color: #E7F294;
     background-color: hsla(67, 78%, 76%, 0.2);
@@ -36,20 +35,6 @@ body {
     border-radius: 1rem; 
     box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.2); 
 }
-/* .two-times-golden-ratio, .three-times-golden-ratio {
-    display: flex; 
-    justify-content: space-evenly; 
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 50px;
-}
-.two-times-golden-ratio {
-    width: calc(100vw/1.61/1.61);
-
-}
-.three-times-golden-ratio {
-    width: calc(100vw/1.61/1.61/1.61);
-} */
 button {
     background-color: #D9FF45;
     padding: 1rem 2rem 1rem 2rem;
@@ -60,21 +45,17 @@ button:hover {
     background-color: #FFDD45;
 }
 .invisible-button {
-    /* background-color: rgba(116, 116, 116, 0.108); */
     background-color: transparent;
     background-color: white;
     background-color: #fafafa33;
     background-color: hsla(0, 0%, 98%, 0.2);
     border: solid hsla(0, 0%, 50%, 0.1);
-    /* border: 1px solid black;  */
-    /* box-shadow: none; */
 }
 .invisible-button:hover {
     background-color: transparent;
     background-color: hsla(0, 0%, 98%, 0.2);
 }
 .play-button {
-/*     padding: 2rem 3.22rem; */
     padding: 2dvw 13dvh;
 }
 .not-clickable:hover {
@@ -89,31 +70,18 @@ button:hover {
 } 
 @media screen and (max-width: 992px) {
     #game-container{
-        /* min-height: 20dvh;
-        display: flex;
-        justify-content: space-evenly; */
-        /* background-color: blue; */
+       
         flex-direction: row;
         flex-wrap: wrap;
         font-size: 2rem; 
     }
-    /* button {
-        background-color: #D9FF45;
-        padding: 0.77rem 1.2rem 0.77rem 1.2rem;
-        border-radius: 0.77rem;
-        font-size: 1.2rem;
-    } */
+    
     .play-button {
-        /*     padding: 2rem 3.22rem; */
             padding: 5dvw 10dvh;
         }
   }
 @media screen and (max-width: 600px) {
     #game-container{
-        /* min-height: 20dvh;
-        display: flex;
-        justify-content: space-evenly; */
-        /* background-color: red; */
         font-size: 1rem; 
         flex-direction: column;
     }
@@ -124,7 +92,6 @@ button:hover {
         font-size: 1.2rem;
     }
     .play-button {
-/*     padding: 2rem 3.22rem; */
     padding: 5dvw 10dvh;
 }
 }
