@@ -153,7 +153,7 @@ const generateResult = () => {
       break;
     case "even0":
       talkBackDisplay.innerText =
-        "Your bet was even. Result is eveb. You win this round.";
+        "Your bet was even. Result is even. You win this round.";
       break;
     case "even1":
       talkBackDisplay.innerText =

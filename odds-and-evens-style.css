@@ -119,3 +119,8 @@ button:hover {
     padding: 5dvw 10dvh;
 }
 }
+@media screen and (max-width: 400px) {
+  .play-button {
+    padding: 2dvw 4dvh;
+  }
+}
