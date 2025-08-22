@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
-/* * {
+/*  * {
      border: 1px solid black; 
-} */
+}  */
 body {
     background-color: rgb(250, 250, 250);
     color: rgb(25, 25, 25); 
     text-align: center;
     align-items: center;
     font-family: Dosis, 'Libre Franklin', sans-serif;
+}
+h1 {
+    margin: 0.8rem;
+}
+p{
+    margin: 0.24rem;
 }
 #game {
     width: 100dvw;
@@ -18,46 +24,48 @@ body {
     display:flex;
     flex-direction: column;
     align-items: center;
+} .centered-legend{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.4rem;
+} legend{
+    align-items: center;
+    text-align: center;
 }
 #button-container{
     display: flex;
     flex-direction: row;
+    margin: 0.4rem;
 }
 .bet-options{
     border: none;  
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-}
-.centered-legend{
-    text-align: center;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-legend{
-    align-items: center;
-    text-align: center;
-}
-#game-container{
+    text-align: center; 
+    /* background-color: red; */
+}#talk-back-display-container {
+    min-height: 2dvh;
+    display: flex;
+    justify-content: center; 
+    /* background-color: blue; */
+} #talk-back-display {
+    background-color: #E7F294;
+    background-color: hsla(67, 78%, 76%, 0.2);
+    min-width: 30dvw;
+    border-radius: 1rem; 
+    padding: 1.2rem;
+    margin-top: 0.4rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.2); 
+}h2 {
+    font-weight: 400;
+} #game-container{
     min-height: 20dvh;
     display: flex;
     justify-content: space-evenly;
     font-size: 3rem; 
     flex-wrap: wrap;
-}
-#talk-back-display-container {
-    min-height: 20dvh;
-    display: flex;
-    justify-content: center; 
-} #talk-back-display {
-    background-color: #E7F294;
-    background-color: hsla(67, 78%, 76%, 0.2);
-    margin: auto;
-    padding: 1.4rem;
-    min-width: 30dvw;
-    border-radius: 1rem; 
-    box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.2); 
 }
 button {
     background-color: #D9FF45;
@@ -90,8 +98,9 @@ button:hover {
     background-color: hsla(0, 0%, 50%, 0.5); 
 }
 .number-system-container {
-    padding: 3rem; 
+    padding: 1.6rem; 
 } 
+
 @media screen and (max-width: 992px) {
     #game-container{
        
